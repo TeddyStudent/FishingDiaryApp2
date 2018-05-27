@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <title>Sisäänkirjautuminen</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="index.css" rel="stylesheet">
+
+  </head>
+
+  <body class="text-center">
+
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+
+      <header class="masthead mb-auto">
+        <div class="inner">
+          <h3 class="masthead-brand">Kalapäiväkirja &#8482</h3>
+          <nav class="nav nav-masthead justify-content-end">
+            <a class="nav-link" data-toggle="tooltip" data-placement="top" title="Tulossa..." href="#">Ominaisuudet</a>
+            <a class="nav-link active" data-toggle="modal" href="#exampleModal">Yhteystiedot</a>
+          </nav>
+        </div>
+      </header>
+    
+      <form class="form-signin">
+        <!-- <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"> -->
+        <h1 class="h3 mb-3 font-weight-normal">Kirjaudu sisään</h1>
+        <!-- <label for="inputEmail" class="sr-only">Sähköpostiosoite</label> -->
+        <input type="email" autocomplete="email" class="form-control" placeholder="Sähköpostiosoite" name="inputEmail" required autofocus>
+        <!-- <label for="inputPassword" class="sr-only">Salasana</label> -->
+        <input type="password" autocomplete="current-password" class="form-control" placeholder="Salasana" name="inputPassword" required>
+        <input type="button" class="btn btn-lg btn-secondary" onclick="check(this.form)" value="Kirjaudu"/> 
+      </form>
+           
+      <script language="javascript">
+        function check(form)
+        {
+          if(form.inputEmail.value == "test@email.com" && form.inputPassword.value == "test")
+          {
+            document.cookie = "etunimi=testikäyttäjä";
+            window.location.href = 'reissut.html';
+          } 
+          else
+          {
+            alert("Sisäänkirjautuminen epäonnistui! Vihje: 'test@email.com' + 'test'");
+          }
+        }
+      </script>
+
+      <footer class="mastfoot mt-auto">
+        <div class="inner">
+          <p>Kalapäiväkirja on osaamiskehitysprojekti. @TeddyStudent (2018)</p>
+        </div>
+      </footer>    
+
+    </div>
+
+  </body>
+</html>

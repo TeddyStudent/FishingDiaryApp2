@@ -1,0 +1,199 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta content="charset=UTF-8" />
+        <title>Kalapäiväkirja</title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css" />
+    </head>
+
+    <body> <!-- onload="fetchTrips()"> -->
+
+        <!-- flex-container alku -->
+		<div class="flex-container">
+		  
+            <!-- RIVI1: OTSIKKO ja USERINFO -->
+            <div class="row" style="background-color: #0e72b5;">
+                <div class="col">                
+                    <ul>
+                        <!-- <a class="appName">KALAPÄIVÄKIRJA</a> -->
+                        <a href="#">Reissut</a>
+                        <a href="raportit.html">Raportit</a>
+                        <p class="userInfo"><a href="index.html">Uloskirjautuminen</a></p>
+                        <p id="uiNimi" class="userInfo">Moi, tuntematon</p>
+                    </ul>
+                </div>
+            </div>
+            <!-- RIVI1 LOPPU -->
+            
+            <!-- RIVI2: Linkit eri näkymien välillä -->
+            <div class="row" style="background-color: #0e72b5;">
+                <div class="col">                
+                    <ul>
+                        <a onclick="showAddTripsElement()">Lisää reissuja</a>
+                        <a onclick="showAddFishesElement()">Lisää kaloja</a>
+                    </ul>
+                </div>
+            </div>
+            <!-- RIVI2: LOPPU -->
+            
+            <!-- RIVI4: Tämä jaetaan sarakkeisiin  -->  
+            <div class="row">
+                
+                <!-- RIVI4 / SARAKE1: lisää uusi toiminto  -->
+                <div id="addTools" class="col-md-2">
+                <!-- <h3>Uusi reissu</h3> -->
+                <div id="tripsJumbo" class="jumbotron">
+                    <h3>Uusi reissu</h3>
+                    <form id="tripInputForm">
+                    <div class="form-group">
+                        <label for="tripDateInput" style="font-weight: 400;">Ajankohta</label>
+                        <input type="date" class="form-control" id="tripDateInput">
+                    </div>
+                    <div class="form-group">
+                        <label for="tripLocationInput" style="font-weight: 400;">Paikka</label>
+                        <input type="text" class="form-control" id="tripLocationInput" placeholder="Anna kalapaikka">
+                    </div>
+                    <div class="form-group">
+                        <label for="tripWheatherInput" style="font-weight: 400;">Sää</label>
+                        <select class="form-control" id="tripWheatherInput">
+                            <option>pilvinen</option>
+                            <option>puolipilvinen</option>
+                            <option>selkeä</option>
+                            <option>sadekuuroja</option>
+                            <option>kovaa sadetta</option>
+                            <option>ukkosta</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="tripwindSpeedInput" style="font-weight: 400;">Tuulen nopeus (m/s)</label>
+                        <input type="number" class="form-control" id="tripWindSpeedInput">
+                    </div>
+                    <div class="form-group">
+                        <label for="tripWindDirectionInput" style="font-weight: 400;">Tuulen suunta</label>
+                        <select class="form-control" id="tripWindDirectionInput">
+                            <option>pohjoinen</option>
+                            <option>koillinen</option>
+                            <option>itä</option>
+                            <option>kaakko</option>
+                            <option>etelä</option>
+                            <option>lounas</option>
+                            <option>länsi</option>
+                            <option>luode</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="tripAirTempInput" style="font-weight: 400;">Ilmanlämpö</label>
+                        <input type="number" class="form-control" id="tripAirTempInput">
+                    </div>
+                    <div class="form-group">
+                        <label for="tripWaterTempInput" style="font-weight: 400;">Vedenlämpö</label>
+                        <input type="number" class="form-control" id="tripWaterTempInput">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Luo</button>
+                    </form>
+                    <p></p>
+                    <button class="btn btn-info" onclick="hideAddTripsElement()">Piilota</button>
+                </div>
+
+                <!-- Add fishes -->  
+                <div id="fishesJumbo" class="jumbotron">
+                    <h3>Uusi kala</h3>
+                    <form id="fishInputForm">
+                    <div class="form-group">
+                        <label for="fishTripRefInput" style="font-weight: 400;">Kalareissun ID</label>
+                        <input type="text" class="form-control" id="fishTripRefInput">
+                    </div>
+                    <div class="form-group">
+                        <label for="fishTimeInput" style="font-weight: 400;">Aika</label>
+                        <input type="text" class="form-control" id="fishTimeInput" placeholder="HH:MM">
+                    </div>
+                    <div class="form-group">
+                        <label for="fishLengthInput" style="font-weight: 400;">Pituus (cm)</label>
+                        <input type="number" class="form-control" id="fishLengthInput" placeholder="Pituus">
+                    </div>
+					<div class="form-group">
+                        <label for="fishWeigthInput" style="font-weight: 400;">Paino (g)</label>
+                        <input type="number" class="form-control" id="fishWeigthInput">
+                    </div>
+                    <div class="form-group">
+                        <label for="fishSpeciesInput" style="font-weight: 400;">Kalalaji</label>
+                        <select class="form-control" id="tripSpeciesInput">
+                            <option>Ahven</option>
+                            <option>Hauki</option>
+                            <option>Kuha</option>
+                            <option>Lohi</option>
+                            <option>Taimen</option>
+                            <option>Kirjolohi</option>
+                        </select>
+                    </div>
+					<div class="form-group">
+                        <label for="fishCatchTypeInput" style="font-weight: 400;">Pyydystystapa</label>
+                        <select class="form-control" id="fishCatchTypeInput">
+                            <option>Onki</option>
+                            <option>Uistelu</option>
+                            <option>Heitto</option>
+                            <option>Vertikaali</option>
+                            <option>Verkko</option>
+                            <option>Katiska</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="fishLureInput" style="font-weight: 400;">Viehe</label>
+                        <input type="text" class="form-control" id="fishLureInput">
+                    </div>
+                    <div class="form-group">
+                        <label for="tripLureColorInput" style="font-weight: 400;">Väri</label>
+                        <input type="text" class="form-control" id="tripLureColorInput">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Luo</button>
+                    </form>
+                    <p></p>
+                    <button class="btn btn-info" onclick="hideAddFishesElement()">Piilota</button>
+                </div>
+				<!-- end of add fishes -->
+
+                </div>
+                <!-- RIVI4 / SARAKE1: LOPPU -->
+                
+                <!-- RIVI4 / SARAKE2: listaa reissut  -->
+                <div class="col-md-6">
+                    <h3>Reissut</h3>
+                    <div class="col-sm-12 reissut">
+                        <div class="tripsList" id="tripsList">
+                        </div>
+                    </div>
+                </div>
+                <!-- RIVI4 / SARAKE2: LOPPU -->
+    
+                <!-- RIVI4 / SARAKE3: listaa kalat?  -->
+                <div class="col-md-4">
+                    <h3>Kalat</h3>
+                    <!-- päivitä lista reissuvalinnan mukaan -->
+                    <div class="col-sm-12 kalat">
+                        <div class="fishList" id="fishList">
+                            <div class="jumbotron kalaItem">
+                                <span class="label label-primary">Paikka kaloille</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- RIVI4 / SARAKE3: LOPPU -->
+                
+            </div>
+            <!-- RIVI4: loppu  -->
+          
+        </div>
+        <!-- flex-container loppu -->
+  
+        <!-- Chancejs -->
+        <script src="https://chancejs.com/chance.min.js"></script>
+        <!-- Jquery 3.3.1 min -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="main.js"></script> 
+
+    </body>
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Rekisteröityminen</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="index.css" />
+    <!-- include the js file -->
+    <script src="register.js" type="application/javascript"></script>
+  </head>
+
+  <body class="text-center">
+
+      <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      
+        <header class="masthead mb-auto">
+          <div class="inner">
+            <h3 class="masthead-brand">Kalapäiväkirja &#8482</h3>
+            <nav class="nav nav-masthead justify-content-end">
+              <a class="nav-link" data-toggle="tooltip" data-placement="top" title="Tulossa..." href="#">Ominaisuudet</a>
+              <a class="nav-link active" data-toggle="modal" href="#exampleModal">Yhteystiedot</a>
+            </nav>
+          </div>
+        </header>
+
+        <form class="form-register" action="#">      
+          <h1 class="h3 mb-3 font-weight-normal">Rekisteröityminen</h1>
+          <!-- <label for="inputFirstName" class="sr-only">Etunimi</label> -->
+          <input type="firstname" autocomplete="given-name" id="inputFirstname" class="form-control" placeholder="Etunimi" required autofocus>
+          <!-- <label for="inputLastName" class="sr-only">Sukunimi</label> -->
+          <input type="lastname" autocomplete="family-name" id="inputLastname" class="form-control" placeholder="Sukunimi" required>
+          <!-- <label for="inputEmail" class="sr-only">Sählöpostiosoite</label> -->
+          <input type="email" autocomplete="email" id="inputEmail" class="form-control" placeholder="Sähköpostiosoite" required>
+          <!-- <label for="inputPassword" class="sr-only">Salasana</label> -->
+          <input type="password" autocomplete="current-password" id="inputPassword" class="form-control" placeholder="Salasana" required>                  
+          <button class="btn btn-lg btn-secondary" type="submit" onclick="registerUser()">Rekisteröidy</button>
+        </form>
+
+        <footer class="mastfoot mt-auto">
+            <div class="inner">
+              <p>Kalapäiväkirja on osaamiskehitysprojekti. @TeddyStudent (2018)</p>
+            </div>
+        </footer> 
+
+    </div>
+  </body>
+</html>

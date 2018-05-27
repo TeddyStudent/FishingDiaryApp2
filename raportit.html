@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta content="charset=UTF-8" />
+        <title>Kalapäiväkirja</title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css" />
+    </head>
+
+    <body> 
+
+        <!-- flex-container alku -->
+		<div class="flex-container">
+		  
+            <!-- RIVI1: OTSIKKO ja USERINFO -->
+            <div class="row" style="background-color: #0e72b5;">
+                <div class="col">                
+                    <ul>
+                        <!-- <a class="appName">KALAPÄIVÄKIRJA</a> -->
+                        <a href="reissut.html">Reissut</a>
+                        <a href="#">Raportit</a>
+                        <p class="userInfo"><a href="index.html">Uloskirjautuminen</a></p>
+                        <p id="uiNimi" class="userInfo">Moi, tuntematon</p>
+                    </ul>
+                </div>
+            </div>
+            <!-- RIVI1 LOPPU -->
+            
+            <!-- RIVI2: Linkit eri näkymien välillä -->
+            <!--
+            <div class="row" style="background-color: #0e72b5;">
+                <div class="col">                
+                    <ul>
+                        <a onclick="showAddTripsElement()">Lisää reissuja</a>
+                        <a onclick="showAddFishesElement()">Lisää kaloja</a>
+                    </ul>
+                </div>
+            </div>
+            -->
+            <!-- RIVI2: LOPPU -->
+            
+            <!-- RIVI4: Tämä jaetaan sarakkeisiin  -->  
+            <div class="row">
+                
+                <!-- RIVI4 / SARAKE1:  -->
+                <div  class="col-md-12 flex-container reissuFlex">
+
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="images/chart.png" alt="Card image cap" height="80" width="80">
+                        <div class="card-body">
+                            <h3 class="card-title">Kalareissut paikoittain</h3>
+                            <p class="card-text">Maecenas leo augue, rhoncus scelerisque posuere ac, pharetra sed urna. Ut vitae euismod arcu.</p>
+                            <a data-toggle="modal" href="#kalaraportti" class="btn btn-info">Suurenna</a>
+                        </div>
+                     </div>
+
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="images/chart.png" alt="Card image cap" height="80" width="80">
+                        <div class="card-body">
+                            <h3 class="card-title">Kalat lajeittain</h3>
+                            <p class="card-text">Maecenas leo augue, rhoncus scelerisque posuere ac, pharetra sed urna. Ut vitae euismod arcu.</p>
+                            <a data-toggle="modal" href="#kalaraportti" class="btn btn-info">Suurenna</a>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="images/chart.png" alt="Card image cap" height="80" width="80">
+                        <div class="card-body">
+                            <h3 class="card-title">Kalat Vieheittäin</h3>
+                            <p class="card-text">Maecenas leo augue, rhoncus scelerisque posuere ac, pharetra sed urna. Ut vitae euismod arcu.</p>
+                            <a data-toggle="modal" href="#kalaraportti" class="btn btn-info">Suurenna</a>
+                        </div>
+                    </div>
+              
+                </div>
+                <!-- RIVI4 / SARAKE1: LOPPU -->
+    
+                
+            </div>
+            <!-- RIVI4: loppu  -->
+
+            <!-- Modal for viewing reports -->
+            <div class="modal fade" id="kalaraportti" tabindex="-1" role="dialog">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3 class="modal-title">Raportti</h3>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <img src="images/chart2.png" height="400" width="800">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-info" data-dismiss="modal">Sulje</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- endof modal -->
+
+
+          
+        </div>
+        <!-- flex-container loppu -->
+  
+        <!-- Chancejs -->
+        <script src="https://chancejs.com/chance.min.js"></script>
+        <!-- Jquery 3.3.1 min -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="raportit.js"></script> 
+
+    </body>
+</html>

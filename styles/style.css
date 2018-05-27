@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,700');
+
+body {
+    font-family: 'Raleway', 'Arial', sans-serif;
+    background:#2E9CE6;
+    color: #fff;
+    padding: 25px 25px;
+    /* background-image: url("./images/background-blue-clean-355808.jpg"); */
+}
+
+.userInfo {
+    float: right;
+    padding-right: 10px;
+}
+
+.appName {
+    font-size: 200%;
+    /* margin: 1px; */
+    color: #fff;
+}
+
+.jumbotron {
+    max-width: 100%; /* 300px; */
+    /* box-shadow: 1px 1px 1px black; */
+    background-color: transparent;
+    padding-top: 0px; 
+    padding-bottom: 5px;
+    margin-bottom: 0px;
+}
+
+a {
+    color: #fff !important;
+    /* padding-left: 2px; */
+    padding-right: 2px;
+}
+
+a:hover {
+    cursor:pointer;
+   }
+
+ul {
+    -webkit-padding-start: 15px !important;
+    padding-right: 20px;
+    margin-bottom: 20px;
+    font-size: 150%;
+}
+
+.reissut {
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+    margin-top: 15px;
+}
+
+.kalat {
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+    margin-top: 15px;
+}
+
+
+.flex-container {
+    flex-flow: row wrap;
+    /* flex-direction: row; */
+    /* flex-wrap: wrap; */
+    /* align-items: center; /* flex-start | flex-end | center | baseline | stretch; */
+    align-content: center; /* flex-start | flex-end | center | space-between | space-around | stretch; */
+}
+
+.reissuFlex {
+    display: flex;  /* makes the reissu listing wrap in run out of space */ 
+}
+
+
+.label {
+    font-size: 100%;
+    font-weight: 400;
+}
+
+.reissuItem {
+    margin-top: 10px;
+}
+
+.kalaItem {
+    margin-top: 10px;
+}
+
+#tripsJumbo {
+    display: none;
+}
+
+#fishesJumbo {
+    display: none;
+}
+
+#addTools {
+    display: none;
+}
+
+.card {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 5px 5px;
+    box-shadow: 2px 2px 2px 2px rgba(51,51,51,0.7);
+    min-width: 300px;
+    background-color: #0e72b5;
+}
+
+.card-title {
+    font-weight: 700;
+}
+
+.modal-title {
+    margin-top: 5px;
+    font-weight: 700;
+  }
+  
+  .modal-content {
+    background-color: #2E9CE6;
+    color: white;
+    text-align: left;
+  }
